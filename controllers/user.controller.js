@@ -63,7 +63,16 @@ const loginController = async (req,res)=>{
 }
 
 
+const profileController = async function(req,res){
+    console.log(req.user);
 
-const userController = {createUserController , loginController};
+    res.status(200).json({
+        user: req.user
+    })
+}
+
+
+
+const userController = {createUserController , loginController , profileController};
 
 module.exports = {userController}
